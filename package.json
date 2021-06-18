@@ -1,0 +1,17 @@
+{
+  "name": "node-fastify",
+  "version": "1.0.0",
+  "description": "trying to build backend server using another nodejs framework fastify",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js"
+  },
+  "author": "vishal sharma",
+  "license": "ISC",
+  "dependencies": {
+    "fastify": "^3.18.0",
+    "fastify-swagger": "^4.7.0",
+    "nodemon": "^2.0.7",
+    "uuid": "^8.3.2"
+  }
+}
