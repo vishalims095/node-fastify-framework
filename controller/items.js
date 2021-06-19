@@ -1,7 +1,7 @@
 const data = require('../data')
 
 const getData = (rea, res) =>{
-    res.send(item)
+    res.send(data)
 }
 const getItem = (req, res) =>{
     const {id} = req.params

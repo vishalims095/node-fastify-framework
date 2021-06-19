@@ -1,5 +1,5 @@
 const data = require('../data')
-const {getData, getItem} = '../controller/items'
+const {getData, getItem} = require('../controller/items')
 
 //item schema
 
@@ -21,9 +21,10 @@ const getDataOpts = {
             }
         }
     },
-    handler : (req, res) => {
-        res.send( data)
-    }
+    // handler : (req, res) => {
+    //     res.send( data)
+    // }
+    handler : getData // call from controller
 }
 //for object
 
@@ -33,11 +34,12 @@ const getDataOptsObject = {
             200 : Item
         }
     },
-    handler : function (req, res) {
-        const {id} = req.params
-        const item = data.find((ele) => ele.id == id)
-        res.send(item)
-    }
+    // handler : function (req, res) {
+    //     const {id} = req.params
+    //     const item = data.find((ele) => ele.id == id)
+    //     res.send(item)
+    // }
+    handler : getItem //call from controller
 }
 function userRoute (fastify, options, done){
 
