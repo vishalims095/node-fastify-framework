@@ -1,6 +1,6 @@
 # Node-Fastify-Framework
 ## Installation
-@@ npm i fastify --save
+- ![#f03c15] npm i fastify --save  `#f03c15`
 
 ## Usage
 const fastify = require('fastify')({logger : true})
