@@ -1,5 +1,5 @@
-const data = require('../data')
-const {getData, getItem} = require('../controller/items')
+let data = require('../data')
+const {getData, getItem, postData} = require('../controller/items')
 
 //item schema
 
@@ -41,6 +41,18 @@ const getDataOptsObject = {
     // }
     handler : getItem //call from controller
 }
+
+const postDataOptions = {
+    schema : {
+        response : {
+            201 : Item
+        }
+    },
+    handler : postData // call from controller
+}
+
+
+
 function userRoute (fastify, options, done){
 
     // fastify.get('/data', getDataOpts, (req, res) => {
@@ -57,6 +69,8 @@ function userRoute (fastify, options, done){
     fastify.get('/data', getDataOpts)
 
     fastify.get('/filterData/:id', getDataOptsObject )
+
+    fastify.post('/addData', postDataOptions)
 
     done()
 }
