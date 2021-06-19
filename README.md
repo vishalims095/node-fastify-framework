@@ -1,6 +1,6 @@
 # Node-Fastify-Framework
 ## Installation
--npm i fastify --save
+- npm i fastify --save
 
 ## Usage
 const fastify = require('fastify')({logger : true})
