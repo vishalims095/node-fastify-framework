@@ -1,5 +1,15 @@
 const fastify = require('fastify')({logger : true})
 port = 3000
+fastify.register(require('fastify-swagger'), {
+    exposeRoute : true, 
+    routePrefix : '/doc',
+    swagger:{
+        info : {
+            title : 'fastify-api'
+        }
+    }
+})
+//just run 'http://localhost:3000/doc/' on browser
 fastify.register(require('./routes/items'))
 // fastify.get('/testApi', (req, res) => {
 //     res.send({test : "It's working"})
